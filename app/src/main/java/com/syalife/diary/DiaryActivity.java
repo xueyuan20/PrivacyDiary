@@ -13,6 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.update.UmengUpdateAgent;
+
 public class DiaryActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,6 +26,9 @@ public class DiaryActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /**
+         * Floating action button.
+         */
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +74,7 @@ public class DiaryActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-
+            UmengUpdateAgent.update(this);
         }
 
         return super.onOptionsItemSelected(item);
@@ -100,18 +106,15 @@ public class DiaryActivity extends AppCompatActivity
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
     }
 
-    private int getPeachCount(int totalDay) {
-        if (totalDay < 1) {
-            return 0;
-        }
-        int peachCount = 0;
-        int dayPeachCount = 0;
-        for (int day = 0; day < totalDay; day++) {
-        }
-        return 0;
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
+
 }

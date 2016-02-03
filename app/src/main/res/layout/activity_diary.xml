@@ -21,5 +21,4 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_diary"
         app:menu="@menu/activity_diary_drawer" />
-
 </android.support.v4.widget.DrawerLayout>
