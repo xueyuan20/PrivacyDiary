@@ -94,5 +94,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.google.code.gson:gson:latest.integration'
     compile files('libs/umeng-update-v2.6.0.1.jar')
+    compile project(':syalibrary')
 }

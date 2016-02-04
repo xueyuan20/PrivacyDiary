@@ -1,4 +1,4 @@
-package com.syalife.diary;
+package com.syalife.diary.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,12 +12,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
+import com.syalife.diary.R;
+import com.syalife.diary.adapter.ContentListAdpter;
+import com.syalife.diary.object.ContentItem;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 
 public class DiaryActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ListView mContentList;
+    private ContentListAdpter mContentListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,26 @@ public class DiaryActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        /**
+         * Initialize test data.
+         */
+        mContentList = (ListView) findViewById(R.id.list);
+        mContentListAdapter = new ContentListAdpter(this);
+        freshContent(mContentListAdapter);
+
+        mContentList.setAdapter(mContentListAdapter);
+    }
+
+    private void freshContent(ContentListAdpter listAdpter) {
+        if (listAdpter == null) {
+            return;
+        }
+        listAdpter.clear();
+        for (int i = 0; i < 20; i++) {
+            ContentItem item = new ContentItem(i, "[Test]" + String.valueOf(i + 1), "test");
+            listAdpter.add(item);
+        }
     }
 
     @Override
