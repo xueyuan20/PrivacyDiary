@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2016/2/4.
  */
-public class ViewHolder {
+public class SyaViewHolder {
     public static final String POSITION = "position";
     public static final String ITEM = "item";
 
@@ -18,7 +18,7 @@ public class ViewHolder {
     private Map<Integer, View> viewMap = new HashMap<>();
     private Map<Object, Object> dataMap = new HashMap<>();
 
-    public ViewHolder(View convertView) {
+    public SyaViewHolder(View convertView) {
         mConvertView = convertView;
         mConvertView.setTag(R.string.g_convert_view, this);
     }

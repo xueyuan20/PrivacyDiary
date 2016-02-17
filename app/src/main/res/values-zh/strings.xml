@@ -5,4 +5,9 @@
     <string name="navigation_drawer_close">折叠</string>
 
     <string name="action_settings">设置</string>
+    <string name="action_gallery">相册</string>
+    <string name="action_video">视频</string>
+    <string name="action_achievement">作品</string>
+    <string name="action_diary">日志</string>
+    <string name="action_circle">圈子</string>
 </resources>

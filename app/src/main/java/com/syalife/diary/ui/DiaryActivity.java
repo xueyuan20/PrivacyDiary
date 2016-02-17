@@ -9,21 +9,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
 import com.syalife.diary.R;
-import com.syalife.diary.adapter.ContentListAdpter;
+import com.syalife.diary.adapter.ContentListAdapter;
 import com.syalife.diary.object.ContentItem;
+import com.syalife.library.util.SYA_LOG;
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.update.UmengUpdateAgent;
 
 public class DiaryActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ListView mContentList;
-    private ContentListAdpter mContentListAdapter;
+    private ContentListAdapter mContentListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,21 +56,23 @@ public class DiaryActivity extends AppCompatActivity
          * Initialize test data.
          */
         mContentList = (ListView) findViewById(R.id.list);
-        mContentListAdapter = new ContentListAdpter(this);
-        freshContent(mContentListAdapter);
-
+        mContentListAdapter = new ContentListAdapter(this);
         mContentList.setAdapter(mContentListAdapter);
+
+        freshContent(mContentListAdapter);
     }
 
-    private void freshContent(ContentListAdpter listAdpter) {
-        if (listAdpter == null) {
+    private void freshContent(ContentListAdapter listAdapter) {
+        SYA_LOG.i("freshContent....");
+        if (listAdapter == null) {
             return;
         }
-        listAdpter.clear();
+        listAdapter.clear();
         for (int i = 0; i < 20; i++) {
             ContentItem item = new ContentItem(i, "[Test]" + String.valueOf(i + 1), "test");
-            listAdpter.add(item);
+            listAdapter.add(item);
         }
+        listAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -84,45 +85,22 @@ public class DiaryActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_diary_more, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            UmengUpdateAgent.update(this);
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_video) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_achievement) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_diary) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_circle) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_settings) {
 
         }
 

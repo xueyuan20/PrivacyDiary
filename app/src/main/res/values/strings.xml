@@ -4,5 +4,12 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="action_gallery">Gallery</string>
+    <string name="action_video">Videos</string>
+    <string name="action_achievement">Achievements</string>
+    <string name="action_diary">Diary</string>
+
+    <string name="action_circle">Circle</string>
     <string name="action_settings">Settings</string>
+
 </resources>

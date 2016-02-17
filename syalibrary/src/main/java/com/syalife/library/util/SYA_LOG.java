@@ -5,7 +5,7 @@ import android.util.Log;
 /**
  * Created by Administrator on 2016/2/4.
  */
-public class LOG {
+public class SYA_LOG {
     private static final String TAG = "DEBUG_2016";
     private static final boolean DEBUG_ENABLE = true;
 
