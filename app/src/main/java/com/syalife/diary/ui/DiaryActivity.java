@@ -1,5 +1,7 @@
 package com.syalife.diary.ui;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -16,6 +18,7 @@ import android.widget.ListView;
 import com.syalife.diary.R;
 import com.syalife.diary.adapter.ContentListAdapter;
 import com.syalife.diary.object.ContentItem;
+import com.syalife.diary.test.TestActivity;
 import com.syalife.library.util.SYA_LOG;
 import com.umeng.analytics.MobclickAgent;
 
@@ -23,10 +26,12 @@ public class DiaryActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ListView mContentList;
     private ContentListAdapter mContentListAdapter;
+    private Activity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mActivity = this;
         setContentView(R.layout.activity_diary);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -38,8 +43,9 @@ public class DiaryActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                startActivity(new Intent(DiaryActivity.this, TestActivity.class));
             }
         });
 
@@ -92,6 +98,7 @@ public class DiaryActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_gallery) {
+            mActivity.startActivityForResult(new Intent(mActivity, MainActivity.class), 100);
         } else if (id == R.id.nav_video) {
 
         } else if (id == R.id.nav_achievement) {
@@ -121,4 +128,10 @@ public class DiaryActivity extends AppCompatActivity
         MobclickAgent.onPause(this);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        SYA_LOG.i("[requestCode]" + requestCode +
+                ", [resultCode]" + resultCode);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

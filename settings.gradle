@@ -1,1 +1,1 @@
-include ':app', ':syalibrary'
+include ':app', ':syalibrary', ':stickercamera', ':Gpu-Image', ':ImageViewTouch'

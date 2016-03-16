@@ -11,5 +11,16 @@
 
     <string name="action_circle">Circle</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_test">TestActivity</string>
 
+    <string name="hello_world">Hello world!</string>
+
+    <!-- refresh tips -->
+    <string name="tip_pull_down_to_refresh">Pull down to refresh.</string>
+    <string name="tip_release_to_refresh">Release to refresh.</string>
+    <string name="tip_refresh_loading">Loading...</string>
+    <string name="tip_refresh_successful">Refresh successfully.</string>
+    <string name="tip_refresh_failed">Refresh failed.</string>
+    <string name="tip_load_more">Load more...</string>
+    <string name="tip_refresh_last_time">Last update at : $1%s</string>
 </resources>

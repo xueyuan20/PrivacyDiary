@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Diary.iml" filepath="$PROJECT_DIR$/Diary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gpu-Image/Gpu-Image.iml" filepath="$PROJECT_DIR$/Gpu-Image/Gpu-Image.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImageViewTouch/ImageViewTouch.iml" filepath="$PROJECT_DIR$/ImageViewTouch/ImageViewTouch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrivacyDiary.iml" filepath="$PROJECT_DIR$/PrivacyDiary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stickercamera/stickercamera.iml" filepath="$PROJECT_DIR$/stickercamera/stickercamera.iml" />
       <module fileurl="file://$PROJECT_DIR$/syalibrary/syalibrary.iml" filepath="$PROJECT_DIR$/syalibrary/syalibrary.iml" />
     </modules>
   </component>

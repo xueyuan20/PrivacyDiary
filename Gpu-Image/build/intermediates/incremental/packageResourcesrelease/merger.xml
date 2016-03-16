@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="F:\Android\05.projects\OneplusBBS_git\Loopj\PrivacyDiary\Gpu-Image\res"/><source path="F:\Android\05.projects\OneplusBBS_git\Loopj\PrivacyDiary\Gpu-Image\build\generated\res\rs\release"/><source path="F:\Android\05.projects\OneplusBBS_git\Loopj\PrivacyDiary\Gpu-Image\build\generated\res\resValues\release"/></dataSet><dataSet config="release"><source path="F:\Android\05.projects\OneplusBBS_git\Loopj\PrivacyDiary\Gpu-Image\src\release\res"/></dataSet><mergedItems/></merger>
